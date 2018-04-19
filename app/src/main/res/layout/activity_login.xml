@@ -21,11 +21,11 @@
         android:focusableInTouchMode="true">
 
         <ImageView
-            android:id="@+id/image_login_logo"
+            android:id="@+id/imageView7"
             android:layout_width="127dp"
             android:layout_height="127dp"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/logo" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
