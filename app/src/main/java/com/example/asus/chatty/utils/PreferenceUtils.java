@@ -9,6 +9,13 @@ public class PreferenceUtils {
     private static final String PREFERENCE_KEY_CONNECTED = "connected";
     private static final String PREFERENCE_KEY_PROFILE_URL = "profileUrl";
 
+    private static final String PREFERENCE_KEY_NOTIFICATIONS = "notifications";
+    private static final String PREFERENCE_KEY_NOTIFICATIONS_SHOW_PREVIEWS = "notificationsShowPreviews";
+    private static final String PREFERENCE_KEY_NOTIFICATIONS_DO_NOT_DISTURB = "notificationsDoNotDisturb";
+    private static final String PREFERENCE_KEY_NOTIFICATIONS_DO_NOT_DISTURB_FROM = "notificationsDoNotDisturbFrom";
+    private static final String PREFERENCE_KEY_NOTIFICATIONS_DO_NOT_DISTURB_TO = "notificationsDoNotDisturbTo";
+    private static final String PREFERENCE_KEY_GROUP_CHANNEL_DISTINCT = "channelDistinct";
+
     private static Context mAppContext;
 
     private PreferenceUtils() {
@@ -55,5 +62,14 @@ public class PreferenceUtils {
 
     public static String getProfileUrl() {
         return getSharedPreferences().getString(PREFERENCE_KEY_PROFILE_URL, "");
+    }
+
+    public static void setChatChannelDistinct(boolean channelDistinct) {
+        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        editor.putBoolean(PREFERENCE_KEY_GROUP_CHANNEL_DISTINCT, channelDistinct).apply();
+    }
+
+    public static boolean getChatChannelDistinct() {
+        return getSharedPreferences().getBoolean(PREFERENCE_KEY_GROUP_CHANNEL_DISTINCT, true);
     }
 }

@@ -17,13 +17,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-
+        <activity android:name=".CreateChatChannelActivity" />
+        <activity android:name=".utils.PhotoViewerActivity" />
+        <activity android:name=".utils.MediaPlayerActivity" />
+        <activity android:name=".InviteMemberActivity" />
+        <activity android:name=".MemberListActivity" />
+        <activity android:name=".MemberInfoActivity"></activity>
     </application>
 
 </manifest>

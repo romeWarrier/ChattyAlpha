@@ -1,6 +1,7 @@
 package com.example.asus.chatty;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,34 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             //Load list of Chats Channel
-            Fragment fragment = ChatChannelListFragment.newIntance();
+            Fragment fragment = ChatChannelListFragment.newInstance();
+
+            FragmentManager manager = getSupportFragmentManager();
+            manager.popBackStack();
+
+            manager.beginTransaction().replace(R.id.container_chat_channel,fragment).commit();
         }
+    }
+
+    interface onBackPressedListener {
+        boolean onBack();
+    }
+    private onBackPressedListener mOnBackPressedListener;
+
+    void setActionBarTitle(String title){
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setTitle(title);
+        }
+    }
+    public void setOnBackPressedListener(onBackPressedListener listener) {
+        mOnBackPressedListener = listener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mOnBackPressedListener != null && mOnBackPressedListener.onBack()) {
+            return;
+        }
+        super.onBackPressed();
     }
 }
