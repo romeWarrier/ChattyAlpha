@@ -100,7 +100,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
-        android:textColor="#ffffff"
+        android:textColor="@color/groupChannelUnreadCountText"
         android:background="@drawable/group_channel_list_unread_background"
         android:gravity="center"
         android:maxLines="1"

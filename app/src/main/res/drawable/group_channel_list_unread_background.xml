@@ -4,7 +4,7 @@
     android:shape="oval">
 
     <solid
-        android:color="#7d62df"/>
+        android:color="@color/groupChannelUnreadCountBackground"/>
 
     <size
         android:width="24dp"
