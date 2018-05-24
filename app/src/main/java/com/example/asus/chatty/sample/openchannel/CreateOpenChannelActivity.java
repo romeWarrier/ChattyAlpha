@@ -42,7 +42,7 @@ public class CreateOpenChannelActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left_white_24_dp);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow_left);
         }
 
         mNameEditText = (TextInputEditText) findViewById(R.id.edittext_create_open_channel_name);

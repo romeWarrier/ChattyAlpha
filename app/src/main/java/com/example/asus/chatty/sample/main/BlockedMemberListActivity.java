@@ -67,7 +67,7 @@ public class BlockedMemberListActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left_white_24_dp);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow_left);
         }
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_select_user);

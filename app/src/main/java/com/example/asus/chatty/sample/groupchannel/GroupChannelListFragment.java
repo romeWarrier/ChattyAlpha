@@ -69,6 +69,7 @@ public class GroupChannelListFragment extends Fragment {
         mCreateChannelFab = (FloatingActionButton) rootView.findViewById(R.id.fab_group_channel_list);
         mSwipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_layout_group_channel_list);
 
+        //ทำให้ refresh ได้
         mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -77,6 +78,7 @@ public class GroupChannelListFragment extends Fragment {
             }
         });
 
+        //สร้างปุ่ม create ห้องแชท
         mCreateChannelFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,9 +189,7 @@ public class GroupChannelListFragment extends Fragment {
         });
     }
 
-    /**
-     * Displays a dialog listing channel-specific options.
-     */
+    // แสดง option ของห้องแชท
     private void showChannelOptionsDialog(final GroupChannel channel) {
         String[] options;
         final boolean pushCurrentlyEnabled = channel.isPushEnabled();
@@ -223,11 +223,7 @@ public class GroupChannelListFragment extends Fragment {
         builder.create().show();
     }
 
-    /**
-     * Turns push notifications on or off for a selected channel.
-     * @param channel   The channel for which push preferences should be changed.
-     * @param on    Whether to set push notifications on or off.
-     */
+    //แสดงตัวเลือก เปิด-ปิด push
     private void setChannelPushPreferences(final GroupChannel channel, final boolean on) {
         // Change push preferences.
         channel.setPushPreference(on, new GroupChannel.GroupChannelSetPushPreferenceHandler() {

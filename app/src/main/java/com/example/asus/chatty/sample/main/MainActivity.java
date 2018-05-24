@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //แปะ toolbar
         mToolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(mToolbar);
 
+        // เข้าหน้า group channel
         findViewById(R.id.linear_layout_group_channels).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // เข้าหน้า open channel
         findViewById(R.id.linear_layout_open_channels).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //กด disconnect
         findViewById(R.id.button_disconnect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,17 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 disconnect();
             }
         });
-
-        // Displays the SDK version in a TextView
-        String sdkVersion = String.format(getResources().getString(R.string.all_app_version),
-                BaseApp.VERSION, SendBird.getSDKVersion());
-        ((TextView) findViewById(R.id.text_main_versions)).setText(sdkVersion);
     }
 
-    /**
-     * Unregisters all push tokens for the current user so that they do not receive any notifications,
-     * then disconnects from SendBird.
-     */
+    //unregister push token and disconnect
     private void disconnect() {
         SendBird.unregisterPushTokenAllForCurrentUser(new SendBird.UnregisterPushTokenHandler() {
             @Override
@@ -70,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 if (e != null) {
                     // Error!
                     e.printStackTrace();
-
-                    // Don't return because we still need to disconnect.
                 } else {
 //                    Toast.makeText(MainActivity.this, "All push tokens unregistered.", Toast.LENGTH_SHORT).show();
                 }
@@ -89,12 +83,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //แสดง icon menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    //เข้าหน้า setting
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

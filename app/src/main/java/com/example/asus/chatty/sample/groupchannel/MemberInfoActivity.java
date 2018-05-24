@@ -51,7 +51,7 @@ public class MemberInfoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left_white_24_dp);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow_left);
         }
 
         mImageViewProfile = findViewById(R.id.image_view_profile);
