@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+        //set coordinator
         mLoginLayout = (CoordinatorLayout) findViewById(R.id.layout_login);
 
         mUserIdConnectEditText = (TextInputEditText) findViewById(R.id.edittext_login_user_id);
@@ -66,10 +67,6 @@ public class LoginActivity extends AppCompatActivity {
         // A loading indicator
         mProgressBar = (ContentLoadingProgressBar) findViewById(R.id.progress_bar_login);
 
-        // Display current SendBird and app versions in a TextView
-        String sdkVersion = String.format(getResources().getString(R.string.all_app_version),
-                BaseApp.VERSION, SendBird.getSDKVersion());
-        ((TextView) findViewById(R.id.text_login_versions)).setText(sdkVersion);
     }
 
     @Override
@@ -80,11 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Attempts to connect a user to SendBird.
-     * @param userId    The unique ID of the user.
-     * @param userNickname  The user's nickname, which will be displayed in chats.
-     */
+    // userid , usernickname
     private void connectToSendBird(final String userId, final String userNickname) {
         // Show the loading indicator
         showProgressBar(true);
@@ -93,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         ConnectionManager.login(userId, new SendBird.ConnectHandler() {
             @Override
             public void onConnected(User user, SendBirdException e) {
-                // Callback received; hide the progress bar.
+                // แจ้งกลับว่า login ได้หรือไม่
                 showProgressBar(false);
 
                 if (e != null) {
@@ -103,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT)
                             .show();
 
-                    // Show login failure snackbar
+                    // show error ใน snackbar
                     showSnackbar("Login to SendBird failed");
                     mConnectButton.setEnabled(true);
                     PreferenceUtils.setConnected(false);
@@ -118,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                 updateCurrentUserInfo(userNickname);
                 updateCurrentUserPushToken();
 
-                // Proceed to MainActivity
+                // intent เข้า main activity
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -126,17 +119,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Update the user's push token.
-     */
+    //Update the user's push token.
     private void updateCurrentUserPushToken() {
         PushUtils.registerPushTokenForCurrentUser(LoginActivity.this, null);
     }
 
-    /**
-     * Updates the user's nickname.
-     * @param userNickname  The new nickname of the user.
-     */
+    //เปลี่ยนชื่อเล่นของ user
     private void updateCurrentUserInfo(final String userNickname) {
         SendBird.updateCurrentUserInfo(userNickname, null, new SendBird.UserInfoUpdateHandler() {
             @Override
@@ -148,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT)
                             .show();
 
-                    // Show update failed snackbar
+                    // show error ใน snackbar
                     showSnackbar("Update user nickname failed");
 
                     return;
@@ -162,7 +150,6 @@ public class LoginActivity extends AppCompatActivity {
     // Displays a Snackbar from the bottom of the screen
     private void showSnackbar(String text) {
         Snackbar snackbar = Snackbar.make(mLoginLayout, text, Snackbar.LENGTH_SHORT);
-
         snackbar.show();
     }
 

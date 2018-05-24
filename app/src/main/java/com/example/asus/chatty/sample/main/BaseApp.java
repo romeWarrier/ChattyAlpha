@@ -16,6 +16,7 @@ public class BaseApp extends Application {
         super.onCreate();
         PreferenceUtils.init(getApplicationContext());
 
+        // Our App id from Sendbird dashboard
         SendBird.init(APP_ID, getApplicationContext());
     }
 }

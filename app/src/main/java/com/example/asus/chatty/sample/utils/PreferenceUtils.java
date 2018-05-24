@@ -19,7 +19,6 @@ public class PreferenceUtils {
 
     private static Context mAppContext;
 
-    // Prevent instantiation
     private PreferenceUtils() {
     }
 
