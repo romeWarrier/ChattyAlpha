@@ -7,8 +7,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context=".sample.main.LoginActivity"
+    tools:context=".main.LoginActivity"
     android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/text_login_versions"
+        android:text="@string/all_app_version"
+        android:textColor="#a0a0a0"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="28dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +36,7 @@
             android:layout_width="127dp"
             android:layout_height="127dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/logo_square"/>
+            android:background="@drawable/icon"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -66,7 +77,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="44dp"
             android:stateListAnimator="@null"
-            android:background="@drawable/btn_purple">
+            android:background="#58ff44">
         </android.support.v7.widget.AppCompatButton>
 
     </LinearLayout>

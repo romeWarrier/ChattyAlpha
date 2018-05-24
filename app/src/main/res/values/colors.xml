@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Global colors -->
-    <color name="colorPrimary">#774df2</color>
-    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorPrimary">#1aff00</color>
+    <color name="colorPrimaryDark">#3c3f3c</color>
     <color name="colorAccent">#1fcc94</color>
 
-    <color name="textColorPrimary">#3a414d</color>
+    <color name="textColorPrimary">#3c3f3c</color>
     <color name="textColorLight">#6f7c92</color>
 
     <!-- Login -->
-    <color name="colorButton">#774df2</color>
+    <color name="colorButton">#001f2121</color>
 
     <!-- Open Chat -->
     <color name="openChatText">#47505d</color>
