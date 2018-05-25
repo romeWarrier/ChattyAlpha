@@ -58,32 +58,6 @@ public class SelectableUserListAdapter extends RecyclerView.Adapter<RecyclerView
         notifyDataSetChanged();
     }
 
-/*    public void unblock() {
-        for (final String userId : mSelectedUserIds) {
-            SendBird.unblockUserWithUserId(userId, new SendBird.UserUnblockHandler() {
-                @Override
-                public void onUnblocked(SendBirdException e) {
-                    if (e != null) {
-                        return;
-                    }
-
-                    User user;
-                    for (int index = 0; index < mUsers.size(); index++) {
-                        user = mUsers.get(index);
-                        if (userId.equals(user.getUserId())) {
-                            mUsers.remove(index);
-                            break;
-                        }
-                    }
-
-                    //((BlockedMemberListActivity)mContext).blockedMemberCount(mUsers.size());
-
-                    notifyDataSetChanged();
-                }
-            });
-        }
-    }*/
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_selectable_user, parent, false);

@@ -88,10 +88,6 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView mTextViewNotificationsDoNotDisturbFrom;
     private TextView mTextViewNotificationsDoNotDisturbTo;
 
-    private CheckBox mCheckBoxGroupChannelDistinct;
-
-    private LinearLayout mLinearLayoutBlockedMembersList;
-
     private CompoundButton.OnCheckedChangeListener mCheckedChangeListener;
 
     @Override
@@ -125,8 +121,6 @@ public class SettingsActivity extends AppCompatActivity {
         mLinearLayoutNotificationsDoNotDisturbTo = (LinearLayout) findViewById(R.id.linear_layout_notifications_do_not_disturb_to);
         mTextViewNotificationsDoNotDisturbFrom = (TextView) findViewById(R.id.text_view_notifications_do_not_disturb_from);
         mTextViewNotificationsDoNotDisturbTo = (TextView) findViewById(R.id.text_view_notifications_do_not_disturb_to);
-
-        mCheckBoxGroupChannelDistinct = (CheckBox) findViewById(R.id.checkbox_make_group_channel_distinct);
 
         //+ ProfileUrl
         String profileUrl = PreferenceUtils.getProfileUrl();
@@ -297,14 +291,14 @@ public class SettingsActivity extends AppCompatActivity {
         //- Notifications
 
         //+ Group Channel Distinct
-        mCheckBoxGroupChannelDistinct.setChecked(PreferenceUtils.getGroupChannelDistinct());
+        /*mCheckBoxGroupChannelDistinct.setChecked(PreferenceUtils.getGroupChannelDistinct());
 
         mCheckBoxGroupChannelDistinct.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 PreferenceUtils.setGroupChannelDistinct(isChecked);
             }
-        });
+        });*/
         //- Group Channel Distinct
     }
 

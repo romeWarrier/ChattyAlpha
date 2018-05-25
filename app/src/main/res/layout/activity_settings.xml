@@ -290,59 +290,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="21dp"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="21dp"
-                    android:paddingRight="20dp"
-                    android:background="#e6e6e6">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical"
-                        android:text="Group channel distinct"
-                        android:textColor="#1b1d1d"
-                        android:textSize="14sp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="13.5dp"
-                    android:paddingBottom="13.5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="16dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="Make channel distinct"
-                        android:textColor="#1b1d1d"
-                        android:textSize="15sp"/>
-
-                    <android.support.v7.widget.AppCompatCheckBox
-                        android:id="@+id/checkbox_make_group_channel_distinct"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical"/>
-
-                </LinearLayout>
-
             </LinearLayout>
 
         </ScrollView>
