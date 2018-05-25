@@ -246,23 +246,12 @@ public class GroupChannelListFragment extends Fragment {
         });
     }
 
-    /**
-     * Enters a Group Channel. Upon entering, a GroupChatFragment will be inflated
-     * to display messages within the channel.
-     *
-     * @param channel The Group Channel to enter.
-     */
     void enterGroupChannel(GroupChannel channel) {
         final String channelUrl = channel.getUrl();
 
         enterGroupChannel(channelUrl);
     }
 
-    /**
-     * Enters a Group Channel with a URL.
-     *
-     * @param channelUrl The URL of the channel to enter.
-     */
     void enterGroupChannel(String channelUrl) {
         GroupChatFragment fragment = GroupChatFragment.newInstance(channelUrl);
         getFragmentManager().beginTransaction()
@@ -275,12 +264,6 @@ public class GroupChannelListFragment extends Fragment {
         refreshChannelList(CHANNEL_LIST_LIMIT);
     }
 
-    /**
-     * Creates a new query to get the list of the user's Group Channels,
-     * then replaces the existing dataset.
-     *
-     * @param numChannels The number of channels to load.
-     */
     private void refreshChannelList(int numChannels) {
         mChannelListQuery = GroupChannel.createMyGroupChannelListQuery();
         mChannelListQuery.setLimit(numChannels);
@@ -304,9 +287,6 @@ public class GroupChannelListFragment extends Fragment {
         }
     }
 
-    /**
-     * Loads the next channels from the current query instance.
-     */
     private void loadNextChannelList() {
         mChannelListQuery.next(new GroupChannelListQuery.GroupChannelListQueryResultHandler() {
             @Override
@@ -324,11 +304,6 @@ public class GroupChannelListFragment extends Fragment {
         });
     }
 
-    /**
-     * Leaves a Group Channel.
-     *
-     * @param channel The channel to leave.
-     */
     private void leaveChannel(final GroupChannel channel) {
         channel.leave(new GroupChannel.GroupChannelLeaveHandler() {
             @Override

@@ -154,9 +154,6 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    /**
-     * Inflates the correct layout according to the View Type.
-     */
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -204,9 +201,6 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    /**
-     * Binds variables in the BaseMessage to UI components in the ViewHolder.
-     */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         BaseMessage message = mMessageList.get(position);
@@ -270,9 +264,6 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    /**
-     * Declares the View Type according to the type of message and the sender.
-     */
     @Override
     public int getItemViewType(int position) {
 

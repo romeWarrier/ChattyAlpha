@@ -101,9 +101,6 @@ public class GroupChatFragment extends Fragment {
     private int mCurrentState = STATE_NORMAL;
     private BaseMessage mEditingMessage = null;
 
-    /**
-     * To create an instance of this fragment, a Channel URL should be required.
-     */
     public static GroupChatFragment newInstance(@NonNull String channelUrl) {
         GroupChatFragment fragment = new GroupChatFragment();
 
