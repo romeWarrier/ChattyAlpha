@@ -128,15 +128,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         mCheckBoxGroupChannelDistinct = (CheckBox) findViewById(R.id.checkbox_make_group_channel_distinct);
 
-        mLinearLayoutBlockedMembersList = (LinearLayout) findViewById(R.id.linear_layout_blocked_members_list);
-        mLinearLayoutBlockedMembersList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this, BlockedMemberListActivity.class);
-                startActivity(intent);
-            }
-        });
-
         //+ ProfileUrl
         String profileUrl = PreferenceUtils.getProfileUrl();
         if (profileUrl.length() > 0) {
