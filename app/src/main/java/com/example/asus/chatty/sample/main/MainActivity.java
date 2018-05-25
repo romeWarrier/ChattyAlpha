@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //แปะ toolbar
+        //�?�?ะ toolbar
         mToolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(mToolbar);
 
-        // เข้าหน้า group channel
+        // เ�?�?าห�?�?า group channel
         findViewById(R.id.linear_layout_group_channels).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //กด disconnect
+        //�?ด disconnect
         findViewById(R.id.button_disconnect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //แสดง icon menu
+    //�?สด�? icon menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    //เข้าหน้า setting
+    //เ�?�?าห�?�?า setting
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

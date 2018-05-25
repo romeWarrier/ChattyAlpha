@@ -69,7 +69,7 @@ public class GroupChannelListFragment extends Fragment {
         mCreateChannelFab = (FloatingActionButton) rootView.findViewById(R.id.fab_group_channel_list);
         mSwipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_layout_group_channel_list);
 
-        //ทำให้ refresh ได้
+        //ทำ�?ห�? refresh �?ด�?
         mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -78,7 +78,7 @@ public class GroupChannelListFragment extends Fragment {
             }
         });
 
-        //สร้างปุ่ม create ห้องแชท
+        //สร�?า�?�?ุ�?ม create ห�?อ�?�?�?ท
         mCreateChannelFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,7 +189,7 @@ public class GroupChannelListFragment extends Fragment {
         });
     }
 
-    // แสดง option ของห้องแชท
+    // �?สด�? option �?อ�?ห�?อ�?�?�?ท
     private void showChannelOptionsDialog(final GroupChannel channel) {
         String[] options;
         final boolean pushCurrentlyEnabled = channel.isPushEnabled();
@@ -223,7 +223,7 @@ public class GroupChannelListFragment extends Fragment {
         builder.create().show();
     }
 
-    //แสดงตัวเลือก เปิด-ปิด push
+    //�?สด�?ตัวเลือ�? เ�?ิด-�?ิด push
     private void setChannelPushPreferences(final GroupChannel channel, final boolean on) {
         // Change push preferences.
         channel.setPushPreference(on, new GroupChannel.GroupChannelSetPushPreferenceHandler() {

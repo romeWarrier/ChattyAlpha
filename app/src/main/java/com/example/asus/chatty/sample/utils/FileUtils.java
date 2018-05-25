@@ -36,7 +36,12 @@ public class FileUtils {
 
     }
 
-    @TargetApi(Build.VERSION_CODES.KITKAT)
+    /**
+	 * 
+	 * @param context
+	 * @param uri
+	 */
+	@TargetApi(VERSION_CODES.KITKAT)
     public static Hashtable<String, Object> getFileInfo(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;

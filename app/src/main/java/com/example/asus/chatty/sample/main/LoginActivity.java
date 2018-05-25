@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         ConnectionManager.login(userId, new SendBird.ConnectHandler() {
             @Override
             public void onConnected(User user, SendBirdException e) {
-                // แจ้งกลับว่า login ได้หรือไม่
+                // �?�?�?�?�?ลั�?ว�?า login �?ด�?หรือ�?ม�?
                 showProgressBar(false);
 
                 if (e != null) {
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT)
                             .show();
 
-                    // show error ใน snackbar
+                    // show error �?�? snackbar
                     showSnackbar("Login to SendBird failed");
                     mConnectButton.setEnabled(true);
                     PreferenceUtils.setConnected(false);
@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                 updateCurrentUserInfo(userNickname);
                 updateCurrentUserPushToken();
 
-                // intent เข้า main activity
+                // intent เ�?�?า main activity
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         PushUtils.registerPushTokenForCurrentUser(LoginActivity.this, null);
     }
 
-    //เปลี่ยนชื่อเล่นของ user
+    //เ�?ลี�?ย�?�?ื�?อเล�?�?�?อ�? user
     private void updateCurrentUserInfo(final String userNickname) {
         SendBird.updateCurrentUserInfo(userNickname, null, new SendBird.UserInfoUpdateHandler() {
             @Override
@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT)
                             .show();
 
-                    // show error ใน snackbar
+                    // show error �?�? snackbar
                     showSnackbar("Update user nickname failed");
 
                     return;
