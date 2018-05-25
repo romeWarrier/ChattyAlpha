@@ -11,10 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.asus.chatty.R;
-import com.example.asus.chatty.sample.main.BlockedMemberListActivity;
 import com.example.asus.chatty.sample.utils.ImageUtils;
-import com.sendbird.android.SendBird;
-import com.sendbird.android.SendBirdException;
 import com.sendbird.android.User;
 
 import java.util.ArrayList;
@@ -61,7 +58,7 @@ public class SelectableUserListAdapter extends RecyclerView.Adapter<RecyclerView
         notifyDataSetChanged();
     }
 
-    public void unblock() {
+/*    public void unblock() {
         for (final String userId : mSelectedUserIds) {
             SendBird.unblockUserWithUserId(userId, new SendBird.UserUnblockHandler() {
                 @Override
@@ -79,13 +76,13 @@ public class SelectableUserListAdapter extends RecyclerView.Adapter<RecyclerView
                         }
                     }
 
-                    ((BlockedMemberListActivity)mContext).blockedMemberCount(mUsers.size());
+                    //((BlockedMemberListActivity)mContext).blockedMemberCount(mUsers.size());
 
                     notifyDataSetChanged();
                 }
             });
         }
-    }
+    }*/
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
