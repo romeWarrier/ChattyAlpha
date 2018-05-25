@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.asus.chatty.R;
 import com.example.asus.chatty.sample.groupchannel.GroupChannelActivity;
-import com.example.asus.chatty.sample.openchannel.OpenChannelActivity;
 import com.example.asus.chatty.sample.utils.PreferenceUtils;
 import com.sendbird.android.SendBird;
 import com.sendbird.android.SendBirdException;
@@ -39,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // เข้าหน้า open channel
+        /*// เข้าหน้า open channel
         findViewById(R.id.linear_layout_open_channels).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, OpenChannelActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         //กด disconnect
         findViewById(R.id.button_disconnect).setOnClickListener(new View.OnClickListener() {
