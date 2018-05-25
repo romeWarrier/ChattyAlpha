@@ -30,9 +30,6 @@
         <activity
             android:name=".sample.main.SettingsActivity"
             android:label="@string/settings" />
-        <activity
-            android:name=".sample.main.BlockedMemberListActivity"
-            android:label="@string/blocked_members_list" />
 
         <activity android:name=".sample.utils.PhotoViewerActivity" />
         <activity
