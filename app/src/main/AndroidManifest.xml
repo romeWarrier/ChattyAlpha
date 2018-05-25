@@ -36,10 +36,6 @@
             android:name=".sample.utils.MediaPlayerActivity"
             android:configChanges="orientation|screenSize" />
         <activity
-            android:name=".sample.openchannel.CreateOpenChannelActivity"
-            android:label="@string/create_open_channel"
-            android:windowSoftInputMode="stateVisible" />
-        <activity
             android:name=".sample.groupchannel.InviteMemberActivity"
             android:label="@string/invite_member" />
         <activity
@@ -51,11 +47,6 @@
         <activity
             android:name=".sample.groupchannel.CreateGroupChannelActivity"
             android:label="@string/create_group_channel" />
-        <activity
-            android:name=".sample.openchannel.ParticipantListActivity"
-            android:label="@string/participant_list" />
-        <activity android:name=".sample.openchannel.OpenChannelActivity"
-            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".sample.groupchannel.GroupChannelActivity"
             android:windowSoftInputMode="stateHidden" />
 

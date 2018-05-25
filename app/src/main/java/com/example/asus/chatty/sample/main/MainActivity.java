@@ -38,26 +38,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*// เข้าหน้า open channel
-        findViewById(R.id.linear_layout_open_channels).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, OpenChannelActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
         //กด disconnect
         findViewById(R.id.button_disconnect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Unregister push tokens and disconnect
+                //disconnect
                 disconnect();
             }
         });
     }
 
-    //unregister push token and disconnect
+    //disconnect
     private void disconnect() {
         SendBird.unregisterPushTokenAllForCurrentUser(new SendBird.UnregisterPushTokenHandler() {
             @Override
@@ -65,10 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 if (e != null) {
                     // Error!
                     e.printStackTrace();
-                } else {
-//                    Toast.makeText(MainActivity.this, "All push tokens unregistered.", Toast.LENGTH_SHORT).show();
                 }
-
                 ConnectionManager.logout(new SendBird.DisconnectHandler() {
                     @Override
                     public void onDisconnected() {
